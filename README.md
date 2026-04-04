@@ -38,7 +38,7 @@ Welcome to my data analytics journey - turning raw data into meaningful insights
 - 📊 Insurance Claims Dashboard (Tableau)  
 - 🗳️ Election Data & Text Analysis  
 
-👉 Explore all projects in this repository  
+👉 Explore all projects in this repository 
 
 ---
 
