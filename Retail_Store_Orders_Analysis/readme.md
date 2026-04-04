@@ -1,66 +1,86 @@
-🛒 Retail Store Orders Analysis
+# 🛒 Retail Store Orders Analysis
 
-📌 Overview
+## 🔍 About the Project
 
-In this project, I worked on analyzing retail store order data to understand sales patterns, customer behavior, and business performance. The goal was to use SQL and Excel to answer real business questions and extract meaningful insights from the data.
+In this project, I analyzed retail store order data to understand sales patterns, customer behavior, and overall business performance.
 
-🎯 Objective
+The main focus was to use **SQL and Excel to answer real business questions** and turn raw data into meaningful insights.
 
-Analyze sales and order data using SQL
-Identify key trends in customer purchases and product performance
-Answer business-related questions using data
+---
 
-📂 Dataset
+## 🎯 Objective
 
-The dataset contains retail order information including:
+* Analyze sales and order data using SQL
+* Identify trends in customer purchases and product performance
+* Answer business-related questions using data
 
-Order details
-Product categories
-Sales and profit data
-Customer and regional information
+---
 
-Some data cleaning was required before analysis.
+## 📂 Dataset
 
-🛠 Tools Used
+The dataset includes:
 
-SQL – for querying and analysis
-Excel – for data cleaning and initial exploration
+* Order details
+* Product categories
+* Sales and profit data
+* Customer and regional information
 
-🔍 What I Did
+Some preprocessing and cleaning were required before starting the analysis.
 
-Cleaned and prepared the dataset in Excel
-Wrote SQL queries to analyze sales and customer data
-Used joins, aggregations, and subqueries to answer business questions
-Extracted insights related to customer behavior and product performance
+---
 
-📊 Key Insights
+## 🛠 Tools Used
 
-Identified high-volume customers who purchased more than 10 products per order
-Observed variation in order sizes across customers
-Found top-performing product classes in international markets (excluding India & USA)
-Noticed differences in revenue contribution across product categories
-Analyzed large shipment orders to understand logistics patterns
-Worked on carton optimization to determine efficient packaging sizes
+* **SQL** – for querying and analysis
+* **Excel** – for data cleaning and initial exploration
 
-📈 Outcome
+---
 
-Through this project, I was able to:
+## 🔍 What I Did
 
-Improve my SQL skills by solving real-world business problems
-Understand how data can be used to support decision-making
-Gain experience in analyzing sales and customer data
+* Cleaned and prepared the dataset using Excel
+* Wrote SQL queries to analyze sales and customer data
+* Used joins, aggregations, and subqueries to solve business problems
+* Explored patterns in customer behavior and product performance
 
-💡 What I Learned
+---
 
-Writing efficient SQL queries
-Using data to answer business questions
-Understanding key metrics like sales and customer behavior
-Importance of clean and structured data
+## 📊 Key Insights
 
-🔗 Project Files
+* Identified **high-value customers** who purchased more than 10 products per order
+* Observed variation in order sizes across different customers
+* Found **top-performing product categories** in international markets (excluding India & USA)
+* Noticed differences in revenue contribution across product categories
+* Analyzed large shipment orders to understand logistics patterns
+* Explored carton optimization for more efficient packaging
 
-You can find the dataset and SQL queries in this repository.
+---
 
-🙌 Final Thoughts
+## 📈 Outcome
 
-This project helped me get hands-on experience with SQL and understand how data analysis is used in real business scenarios.
+Through this project, I:
+
+* Strengthened my SQL skills with real-world scenarios
+* Learned how to approach business problems using data
+* Gained hands-on experience in sales and customer analysis
+
+---
+
+## 💡 What I Learned
+
+* Writing efficient and structured SQL queries
+* Using data to answer business questions
+* Understanding key metrics like sales, revenue, and customer behavior
+* Importance of clean and well-structured data
+
+---
+
+## 🔗 Project Files
+
+The dataset and SQL queries are available in this repository.
+
+---
+
+## 🙌 Final Thoughts
+
+This project gave me a solid understanding of how data analysis works in real business scenarios and improved my confidence in using SQL for problem-solving.
