@@ -100,6 +100,7 @@ Some patterns I noticed:
 * Include box office data for deeper analysis
 * Improve predictions for very high/low rated movies
 * Explore more advanced models
+* Remove the rating_rounded column from the model inputs, since it is derived from the target (rating) and makes the RMSE look better than it really is
 
 ---
 
