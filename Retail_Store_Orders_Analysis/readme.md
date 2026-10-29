@@ -2,85 +2,89 @@
 
 ## 🔍 About the Project
 
-In this project, I analyzed retail store order data to understand sales patterns, customer behavior, and overall business performance.
+In this project, I used SQL to answer business questions about an online retail store's orders, customers, products, and shipping.
 
-The main focus was to use **SQL and Excel to answer real business questions** and turn raw data into meaningful insights.
-
----
-
-## 🎯 Objective
-
-* Analyze sales and order data using SQL
-* Identify trends in customer purchases and product performance
-* Answer business-related questions using data
+The data is spread across 8 related tables, so most questions needed joining several tables together.
 
 ---
 
 ## 📂 Dataset
 
-The dataset includes:
+The `orders` database has 8 tables (about 470 rows in total):
 
-* Order details
-* Product categories
-* Sales and profit data
-* Customer and regional information
-
-Some preprocessing and cleaning were required before starting the analysis.
+| Table | What it holds | Rows |
+|---|---|---|
+| ORDER_HEADER | Order date, status, payment, shipper | 70 |
+| ORDER_ITEMS | Products and quantities in each order | 205 |
+| ONLINE_CUSTOMER | Customer details | 52 |
+| ADDRESS | Customer city, state, country | 57 |
+| PRODUCT | Price, stock, size, and weight of each product | 60 |
+| PRODUCT_CLASS | Product categories | 14 |
+| CARTON | Box sizes available for packing | 7 |
+| SHIPPER | Shipping companies | 6 |
 
 ---
 
 ## 🛠 Tools Used
 
-* **SQL** – for querying and analysis
-* **Excel** – for data cleaning and initial exploration
+* **MySQL** – database setup and analysis
+* **Excel** – data cleaning and first look at the data
 
 ---
 
-## 🔍 What I Did
+## ❓ Business Questions I Answered
 
-* Cleaned and prepared the dataset using Excel
-* Wrote SQL queries to analyze sales and customer data
-* Used joins, aggregations, and subqueries to solve business problems
-* Explored patterns in customer behavior and product performance
+1. **Which carton should we use?**
+   For a given order, find the smallest carton that can hold all its items, using product size (length × width × height) and quantity.
 
----
+2. **Who are our bulk buyers?**
+   Find customers who bought more than 10 products in a single shipped order.
 
-## 📊 Key Insights
+3. **How much did each recent order ship?**
+   Show the total quantity shipped for each order after order ID 10060, with customer details.
 
-* Identified **high-value customers** who purchased more than 10 products per order
-* Observed variation in order sizes across different customers
-* Found **top-performing product categories** in international markets (excluding India & USA)
-* Noticed differences in revenue contribution across product categories
-* Analyzed large shipment orders to understand logistics patterns
-* Explored carton optimization for more efficient packaging
+4. **What sells best outside India and the USA?**
+   Find the product category with the highest shipped quantity in international markets, along with its total value.
 
 ---
 
-## 📈 Outcome
+## 🧠 SQL Concepts Used
 
-Through this project, I:
+* Joins across up to 6 tables (LEFT JOIN)
+* Subqueries
+* Aggregations (SUM) with GROUP BY and HAVING
+* Filtering with WHERE, sorting with ORDER BY, and LIMIT
 
-* Strengthened my SQL skills with real-world scenarios
-* Learned how to approach business problems using data
-* Gained hands-on experience in sales and customer analysis
+---
+
+## 📊 Key Findings
+
+* **Packaging:** Carton 40 is the smallest box that fits all items in order 10006.
+* **Bulk buyers:** 11 shipped orders had more than 10 items, placed by 8 customers. The biggest was Komal's order of 53 items, and Anita placed the most bulk orders (3).
+* **Recent orders:** The 6 shipped orders after ID 10060 were all small (1 to 8 items each).
+* **International markets:** Stationery shipped the most items outside India and the USA (13 items). But Furniture earned the most money ($6,500) from just 2 items, so the top-selling category is not the top-earning one.
+
+---
+
+## ▶️ How to Run
+
+1. Run `SettingData.sql` in MySQL. It creates the `orders` database, builds the tables, and loads the data.
+2. Run `RetailStoreOrderAnlaysis.sql` to see the analysis queries and results.
+
+---
+
+## 📁 Project Files
+
+| File | Description |
+|---|---|
+| `SettingData.sql` | Creates the database and loads the data |
+| `RetailStoreOrderAnlaysis.sql` | Analysis queries for the 4 business questions |
 
 ---
 
 ## 💡 What I Learned
 
-* Writing efficient and structured SQL queries
-* Using data to answer business questions
-* Understanding key metrics like sales, revenue, and customer behavior
-* Importance of clean and well-structured data
-
----
-
-## 🔗 Project Files
-
-The dataset and SQL queries are available in this repository.
-
----
-
-## 🙌 Final Thoughts
-
-This project gave me a solid understanding of how data analysis works in real business scenarios and improved my confidence in using SQL for problem-solving.
+* How to break a business question into SQL steps
+* How to join many related tables correctly
+* How to use subqueries to compare values (like carton volume vs. total item volume)
+* Why clean, well-structured data matters before analysis
