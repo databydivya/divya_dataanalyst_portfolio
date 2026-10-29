@@ -29,24 +29,25 @@ ORDER BY CARTON_VOL LIMIT 1;
 */
 
 SELECT 
-	OC.CUSTOMER_ID, OC.CUSTOMER_FNAME, OH.ORDER_ID, OT.PRODUCT_QUANTITY 
+    OC.CUSTOMER_ID, OC.CUSTOMER_FNAME, OH.ORDER_ID, 
+    SUM(OT.PRODUCT_QUANTITY) AS TOTAL_QUANTITY
 FROM 
-	ONLINE_CUSTOMER OC
+    ONLINE_CUSTOMER OC
 LEFT JOIN 
-	ORDER_HEADER OH
+    ORDER_HEADER OH
 ON 
-	OC.CUSTOMER_ID = OH.CUSTOMER_ID
+    OC.CUSTOMER_ID = OH.CUSTOMER_ID
 LEFT JOIN 
-	ORDER_ITEMS OT
+    ORDER_ITEMS OT
 ON 
-	OH.ORDER_ID = OT.ORDER_ID
+    OH.ORDER_ID = OT.ORDER_ID
 WHERE ORDER_STATUS = 'Shipped'
-GROUP BY OT.ORDER_ID
-HAVING sum(OT.PRODUCT_QUANTITY) > 10
-ORDER BY CUSTOMER_ID;
+GROUP BY OC.CUSTOMER_ID, OC.CUSTOMER_FNAME, OH.ORDER_ID
+HAVING SUM(OT.PRODUCT_QUANTITY) > 10
+ORDER BY OC.CUSTOMER_ID;
 
 
-/* 9. Query to display the order_id, customer id and cutomer full name of customers along with (product_quantity) as total quantity of products shipped for order ids > 10060. (6 ROWS) 
+/* Query to display the order_id, customer id and cutomer full name of customers along with (product_quantity) as total quantity of products shipped for order ids > 10060. (6 ROWS) 
       [NOTE: TABLES TO BE USED - online_customer, order_header, order_items]
 */
 
@@ -63,7 +64,7 @@ LEFT JOIN
 ON 
 	OH.ORDER_ID = OT.ORDER_ID
 WHERE OH.ORDER_ID > 10060 AND ORDER_STATUS = 'Shipped'
-GROUP BY OT.ORDER_ID;
+GROUP BY OH.ORDER_ID, OC.CUSTOMER_ID, OC.CUSTOMER_FNAME;;
 
 /* Query to display product class description ,total quantity (sum(product_quantity),Total value (product_quantity * product price) and show which class of products have been shipped highest(Quantity) to countries outside India other than USA? Also show the total value of those items. (1 ROWS)
 	   [NOTE:PRODUCT TABLE,ADDRESS TABLE,ONLINE_CUSTOMER TABLE,ORDER_HEADER TABLE,ORDER_ITEMS TABLE,PRODUCT_CLASS TABLE] 
@@ -71,7 +72,9 @@ GROUP BY OT.ORDER_ID;
 */
 
 SELECT 
-	PC.PRODUCT_CLASS_DESC, sum(OT.PRODUCT_QUANTITY) as TOTAL_QUANTITY, (OT.PRODUCT_QUANTITY*P.PRODUCT_PRICE) as TOTAL_VALUE
+	PC.PRODUCT_CLASS_DESC, 
+	SUM(OT.PRODUCT_QUANTITY) AS TOTAL_QUANTITY, 
+	SUM(OT.PRODUCT_QUANTITY * P.PRODUCT_PRICE) AS TOTAL_VALUE
 FROM 
 	ADDRESS A
 LEFT JOIN 
@@ -94,8 +97,8 @@ LEFT JOIN
 	PRODUCT_CLASS PC
 ON 
 	P.PRODUCT_CLASS_CODE = PC.PRODUCT_CLASS_CODE
-WHERE OH.ORDER_STATUS = 'Shipped' AND A.COUNTRY != 'INDIA' AND A.COUNTRY!= 'USA'
-GROUP BY OT.PRODUCT_ID
+WHERE OH.ORDER_STATUS = 'Shipped' AND A.COUNTRY != 'INDIA' AND A.COUNTRY != 'USA'
+GROUP BY PC.PRODUCT_CLASS_DESC
 ORDER BY TOTAL_QUANTITY DESC LIMIT 1;
 
  
