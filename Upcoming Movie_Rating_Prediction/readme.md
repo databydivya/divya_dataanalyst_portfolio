@@ -57,7 +57,6 @@ Some patterns I noticed:
 
 * Tried different regression models to predict ratings
 * Compared models using RMSE
-* Final model used: **Gradient Boosting**
 
 ---
 
@@ -72,7 +71,7 @@ Some patterns I noticed:
 
 ## 📈 Outcome
 
-* Built a model with **RMSE ≈ 0.29**
+* Compared several regression models (Linear, Ridge, Lasso, Random Forest, Gradient Boosting, AdaBoost)
 * Gained useful insights that could help before a movie release
 * Improved my understanding of combining **analysis + prediction**
 
