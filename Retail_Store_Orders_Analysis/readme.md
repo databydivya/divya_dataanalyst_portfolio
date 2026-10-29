@@ -28,7 +28,6 @@ The `orders` database has 8 tables (about 470 rows in total):
 ## 🛠 Tools Used
 
 * **MySQL** – database setup and analysis
-* **Excel** – data cleaning and first look at the data
 
 ---
 
