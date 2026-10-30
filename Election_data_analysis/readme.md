@@ -2,42 +2,29 @@
 
 ## 🔍 About the Project
 
-In this project, I analyzed election survey data to understand **voting behavior and the factors that influence party preference**.
-
-The main focus was on **exploring the data, identifying patterns, and generating insights**, while also using basic machine learning to support the analysis.
-
----
-
-## 🎯 Objective
-
-* Analyze voter data to identify trends and patterns
-* Understand key factors influencing voting decisions
-* Answer real-world questions using data
-* Support insights with simple predictive modeling
+In this project, I analyzed UK election survey data to understand **what drives party preference** (Labour vs. Conservative), then compared 8 machine learning models to predict how a person will vote.
 
 ---
 
 ## 📂 Dataset
 
-The dataset contains survey-based election data, including:
-
+* **1,525 survey records** (1,517 after removing 8 duplicates), with no missing values
 * Vote choice (Labour / Conservative)
-* Age
-* Economic conditions (national & household)
-* Leader ratings (Blair & Hague)
-* Attitude towards Europe (Euroscepticism scale)
-* Political knowledge
-* Gender
+* Age and gender
+* Views of the national and household economy (1–5)
+* Ratings of party leaders Blair and Hague (1–5)
+* Attitude towards Europe (1–11, higher = more Eurosceptic)
+* Political knowledge (0–3)
 
-The data required cleaning and preparation before analysis.
+About **70% voted Labour** and 30% Conservative, so the classes are imbalanced.
 
 ---
 
 ## 🛠 Tools Used
 
 * Python (Pandas, NumPy)
-* Excel (for initial exploration)
-* Basic Scikit-learn (for supporting analysis)
+* Matplotlib, Seaborn
+* Scikit-learn, imbalanced-learn (SMOTE)
 
 ---
 
@@ -45,65 +32,55 @@ The data required cleaning and preparation before analysis.
 
 ### 🧹 Data Cleaning & Preparation
 
-* Cleaned and structured the dataset
-* Handled missing values and inconsistencies
-* Converted categorical variables into usable formats
-
----
+* Removed 8 duplicate records
+* Capped outliers using the IQR method
+* Converted vote and gender into numeric (dummy) variables
+* Scaled numeric columns with Min-Max scaling
+* Split the data 70% train / 30% test
 
 ### 📊 Exploratory Data Analysis
 
-* Analyzed how **economic conditions** influence voting behavior
-* Studied the impact of **leader ratings** on party preference
-* Explored trends across **age, gender, and political knowledge**
-* Examined how **attitudes toward Europe** affect voting decisions
+* Checked each variable with descriptive statistics, histograms, and box plots
+* Compared Labour and Conservative voters across every variable
+* Used a pair plot and correlation heatmap to see how variables relate
+* Calculated how each group voted (by leader rating, attitude towards Europe, age, and gender)
+
+### 🤖 Model Comparison
+
+* Built and compared 8 models: Logistic Regression, LDA, Naive Bayes, KNN, Random Forest, Bagging, AdaBoost, and Gradient Boosting
+* Tuned Logistic Regression with GridSearchCV
+* Tested SMOTE to handle the class imbalance, and used 10-fold cross-validation
 
 ---
 
-### 📈 Insights & Findings
+## 📈 Key Findings
 
-* Voter perception of **political leaders** strongly influences vote choice
-* **Economic conditions** (both national and personal) impact decisions
-* Higher **Euroscepticism** is linked with specific voting patterns
-* Demographics like age and awareness levels also play a role
-
----
-
-### 🤖 Supporting Analysis (ML)
-
-* Applied basic classification models to validate patterns
-* Compared model outputs to understand feature importance
-* Used results to support findings from data analysis
-
----
-
-## 📈 Outcome
-
-* Identified key factors driving voting behavior
-* Provided data-backed insights into voter decision-making
-* Strengthened ability to analyze real-world survey data
+* **Leader ratings matter most.** 98% of people who gave Blair the top rating voted Labour, and 81% who gave Hague the top rating voted Conservative.
+* **Attitude towards Europe:** only 5% of the most pro-Europe voters chose Conservative, compared with about 50% of the most Eurosceptic.
+* **Economy:** Labour voters rated the national economy higher on average (3.4 vs. 2.8 out of 5).
+* **Age:** voters over 60 were more likely to vote Conservative (37%) than voters under 40 (25%).
+* **Gender** made little difference (32% of women vs. 29% of men voted Conservative).
+* **Models:** most models reached about 81–83% accuracy on test data. Logistic Regression was a strong, simple choice (83% accuracy, AUC 0.89). Random Forest and Bagging scored 100% on training data but only about 83% on test data, a sign of overfitting.
 
 ---
 
 ## 💡 What I Learned
 
-* How to extract meaningful insights from survey data
-* Importance of understanding data before modeling
-* How to connect analysis with real-world context
-* Using simple models to support analytical findings
+* How to explore survey data before modeling
+* How to compare many models fairly on the same test data
+* How to spot overfitting by comparing training and test scores
+* How class imbalance affects model results
 
 ---
 
 ## 🔮 Future Improvements
 
-* Build interactive dashboards for better visualization
+* Build an interactive dashboard to show the voter groups visually
 * Perform deeper segmentation of voters
-* Expand analysis with additional datasets
+* Expand the analysis with additional datasets
 
 ---
 
 ## 🙌 Final Thoughts
 
-This project helped me focus on **thinking like a data analyst — understanding the data first and using it to explain real-world behavior**, rather than just building models.
-
----
+This project helped me focus on **thinking like a data analyst: understanding the data first and using it to explain real-world behavior**, rather than just building models.
