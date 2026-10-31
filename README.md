@@ -4,7 +4,7 @@
 
 Data Analyst with nearly 2 years of public-sector experience at New York State, working with financial and educational data for state scholarship programs (TAP and Excelsior) covering **$870M+ in spending** and **300,000+ student records**. I enjoy turning messy data into clear, accurate reports that help people make decisions.
 
-🔗 [Portfolio (Notion)](https://www.notion.so/About-Me-abc995bd81e44117b084e50b815f9126?source=copy_link) • 📧 divyamjuri@gmail.com
+🔗 [Portfolio (Notion)](https://divyaamjuri.notion.site/About-Me-abc995bd81e44117b084e50b815f9126) • 📧 divyamjuri@gmail.com
 
 ---
 
