@@ -70,7 +70,7 @@ Insurance companies need to understand which customers carry higher risk so they
 
 - Use **driving record** and **urban/rural location** as key factors in risk-based pricing.
 - Offer **safe-driver programs or discounts** to encourage customers with violations to improve.
-- Target **prevention campaigns** at higher-risk groups, such as young drivers/students and sports car owners.
+- Target **prevention campaigns** at higher-risk groups, such as students and sports car owners.
 
 ---
 
