@@ -29,7 +29,7 @@ Albany, NY, USA · Jan 2024 – Oct 2025
 | 📉 [Customer Churn Analysis](./Customer%20Churn%20Analysis) | Python, Seaborn, Scikit-learn | Complaints and short tenure were the strongest drivers of a 16.8% churn rate |
 | 🎬 [Movie Rating Prediction](./Upcoming%20Movie_Rating_Prediction) | Python (Pandas, NumPy) | Longer films and history, war, and animation genres tend to rate higher |
 | 🗳️ [Election Data Analysis](./Election_data_analysis) | Python, Scikit-learn | Leader ratings and views on Europe shaped votes far more than gender; best models reached ~83% accuracy |
-| 🚗 [Insurance Claims Analysis](./Insurance%20Claims%20Analysis) | Tableau Public | | Urban customers had a 5x higher claim rate than rural; claim rates rose from 19% to 63% with more driving violation points |
+| 🚗 [Insurance Claims Analysis](./Insurance%20Claims%20Analysis) | Tableau Public | Urban customers had a 5x higher claim rate than rural; claim rates rose from 19% to 63% with more driving violation points |
 
 👉 Click any project to see the code and full write-up.
 
