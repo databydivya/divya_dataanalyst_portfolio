@@ -10,7 +10,7 @@ Data Analyst with nearly 2 years of public-sector experience at New York State, 
 
 ## 💼 Experience
 
-**Data Analyst Associate** · NYS Office of Information Technology Services (ITS) – Higher Education Services Corp. (HESC)
+**Data Analyst Associate** · SVK Systems (Client: NYS Office of Information Technology Services)
 Albany, NY, USA · Jan 2024 – Oct 2025
 
 - Wrote SQL and PL/SQL scripts, stored procedures, and triggers to validate transaction flows, reducing manual validation errors by 25%
