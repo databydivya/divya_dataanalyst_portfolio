@@ -1,0 +1,17 @@
+{
+  "per_model": {},
+  "total": {
+    "calls": 0,
+    "cached_calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0
+  },
+  "requests": 518,
+  "seconds": 1.0,
+  "llm_enabled": false,
+  "models": {
+    "text": "claude-haiku-4-5",
+    "vision": "claude-sonnet-4-5"
+  }
+}
