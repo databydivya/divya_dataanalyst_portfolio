@@ -50,7 +50,6 @@ Final ranking: **#301 out of 4,094** participants worldwide.
 - Real-world data is messy: most of the work was turning many file formats into one clean, consistent shape.
 - Simple rules first, AI second: rules handled exact matching reliably, and AI helped with the unclear parts.
 - From the judges' feedback, next time I would:
-  - write the design and the definition of "complete" before any code
   - make missing or unreadable evidence block a `COMPLETE` decision
   - build the output checks into the main run
   - report results for the AI path and the fallback path separately
